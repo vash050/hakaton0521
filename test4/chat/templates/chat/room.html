@@ -1,0 +1,96 @@
+{% extends 'chat/base.html' %}
+
+{% block conteiner %}
+
+    <nav class="header navbar navbar-dark bg-primary">
+      <a class="navbar-brand avatar"></a>
+      <form class="form-inline">
+        <select class="form-control form-control-sm" id="themeSelect">
+          <option value="default">Theme Default</option>
+          <option value="light">Theme Light</option>
+          <option value="dark">Theme Dark</option>
+        </select>
+      </form>
+    </nav>
+      <div class="two-container">
+        <iframe class="iframe-content" allowfullscreen type="text/html" sandbox="allow-scripts" scrolling="auto" src="https://codebeautify.org/jsviewer"></iframe>
+      <div class="list-container tasks-list-section">
+        <div class="container">
+
+              <textarea id="chat-log" cols="100" rows="20"></textarea><br>
+    <input id="chat-message-input" type="text" size="100"><br>
+    <input id="chat-message-submit" type="button" value="Send">
+    {{ room_name|json_script:"room-name" }}
+{#    <script>#}
+{#        const roomName = JSON.parse(document.getElementById('room-name').textContent);#}
+{##}
+{#        const chatSocket = new WebSocket(#}
+{#            'ws://'#}
+{#            + window.location.host#}
+{#            + '/ws/chat/'#}
+{#            + roomName#}
+{#            + '/'#}
+{#        );#}
+{##}
+{#        chatSocket.onmessage = function(e) {#}
+{#            const data = JSON.parse(e.data);#}
+{#            document.querySelector('#chat-log').value += (data.message + '\n');#}
+{#        };#}
+{##}
+{#        chatSocket.onclose = function(e) {#}
+{#            console.error('Chat socket closed unexpectedly');#}
+{#        };#}
+{##}
+{#        document.querySelector('#chat-message-input').focus();#}
+{#        document.querySelector('#chat-message-input').onkeyup = function(e) {#}
+{#            if (e.keyCode === 13) {  // enter, return#}
+{#                document.querySelector('#chat-message-submit').click();#}
+{#            }#}
+{#        };#}
+{##}
+{#        document.querySelector('#chat-message-submit').onclick = function(e) {#}
+{#            const messageInputDom = document.querySelector('#chat-message-input');#}
+{#            const message = messageInputDom.value;#}
+{#            chatSocket.send(JSON.stringify({#}
+{#                'message': message#}
+{#            }));#}
+{#            messageInputDom.value = '';#}
+{#        };#}
+{#    </script>#}
+
+
+        </div>
+      </div>
+    </div>
+    <div class="form-section mt-5 w-100">
+      <div class="container">
+        <div class="col col-8 mx-auto">
+          <div class="card">
+            <div class="card-body">
+              <form name="addTask">
+                <div class="mb-3">
+                  <label for="exampleFormControlInput1" class="form-label">Аватарка:</label>
+                  <input type="text" name="title" class="form-control" id="exampleFormControlInput1">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleFormControlInput1" class="form-label">Имя:</label>
+                  <input type="text" name="theme-task" class="form-control" id="exampleFormControlInput1" placeholder="Имя">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleFormControlTextarea1" class="form-label">Сообщение:</label>
+                  <textarea name="body" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary mt-4">
+                  сохранить
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+{% endblock %}
+
+
