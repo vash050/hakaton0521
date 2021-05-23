@@ -1,19 +1,29 @@
 {% extends 'chat/base.html' %}
 
 {% block conteiner %}
-    What chat room would you like to enter?<br>
-    <input id="room-name-input" type="text" size="100"><br>
-    <input id="room-name-submit" type="button" value="Enter">
+
+    <div class="check">
+        <div class="check__form">
+            <label for="room-name-input">Введите номер своей группы</label>
+            <input type="text" class="check__input" id="room-name-input" placeholder="номер группы">
+            <small id="emailHelp" class="check__text">Вы должны помнить номер совей группы.</small>
+            <button type="submit" id="room-name-submit" class="check__button">Войти</button>
+        </div>
+    </div>
+
+    {#    What chat room would you like to enter?<br>#}
+    {#    <input id="room-name-input" type="text" size="100"><br>#}
+    {#    <input id="room-name-submit" type="button" value="Enter">#}
 
     <script>
         document.querySelector('#room-name-input').focus();
-        document.querySelector('#room-name-input').onkeyup = function(e) {
+        document.querySelector('#room-name-input').onkeyup = function (e) {
             if (e.keyCode === 13) {  // enter, return
                 document.querySelector('#room-name-submit').click();
             }
         };
 
-        document.querySelector('#room-name-submit').onclick = function(e) {
+        document.querySelector('#room-name-submit').onclick = function (e) {
             var roomName = document.querySelector('#room-name-input').value;
             window.location.pathname = '/chat/' + roomName + '/';
         };

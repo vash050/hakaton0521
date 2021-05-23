@@ -5,61 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="icon" href="./notepad_30848.ico"/>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
     <link rel="stylesheet" href="./pages/styles.css" />
     <title>list-note</title>
   </head>
-  <body>
-    <nav class="header navbar navbar-dark bg-primary">
-      <a class="navbar-brand avatar"></a>
-      <form class="form-inline">
-        <select class="form-control form-control-sm" id="themeSelect">
-          <option value="default">Theme Default</option>
-          <option value="light">Theme Light</option>
-          <option value="dark">Theme Dark</option>
-        </select>
-      </form>
+  <body class="body">
+    <nav class="header">
+      <a class="avatar"></a>
+      <button class="header__button"></button>
     </nav>
       <div class="two-container">
-        <iframe class="iframe-content" allowfullscreen type="text/html" sandbox="allow-scripts" scrolling="auto" src="https://codebeautify.org/jsviewer"></iframe>
-      <div class="list-container tasks-list-section">
-        <div class="container">
-          <ul class="list-group"></ul>
-        </div>
-      </div>
-    </div>
-    <div class="form-section mt-5 w-100">
-      <div class="container">
-        <div class="col col-8 mx-auto">
-          <div class="card">
-            <div class="card-body">
-              <form name="addTask">
-                <div class="mb-3">
-                  <label for="exampleFormControlInput1" class="form-label">Аватарка:</label>
-                  <input type="text" name="title" class="form-control" id="exampleFormControlInput1">
-                </div>
-                <div class="mb-3">
-                  <label for="exampleFormControlInput1" class="form-label">Имя:</label>
-                  <input type="text" name="theme-task" class="form-control" id="exampleFormControlInput1" placeholder="Имя">
-                </div>
-                <div class="mb-3">
-                  <label for="exampleFormControlTextarea1" class="form-label">Сообщение:</label>
-                  <textarea name="body" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary mt-4">
-                  сохранить
-                </button>
-              </form>
+        <iframe class="iframe-content" allowfullscreen type="text/html" sandbox="allow-scripts" scrolling="off" src="https://codebeautify.org/jsviewer"></iframe>
+          <div class="container">
+            <h1 class="container__title">Group chat</h1>
+            <select class="container-group">
+              <option class="container-group__item"></option>
+              <option class="container-group__item">😎</option>
+              <option class="container-group__item">🤦‍♀️</option>
+              <option class="container-group__item">👀</option>
+              <option class="container-group__item">🤦‍♂️</option>
+              <option class="container-group__item">🤢</option>
+              <option class="container-group__item">😊</option>
+              <option class="container-group__item">🐱‍🐉</option>
+            </select>
+            <ul class="container-list">
+              <li class="container-list__item">
+                <button class="container-list__icon"></button>
+                1
+              </li>
+            </ul>
+            <div class="form">
+              <input type="text" class="input-list" placeholder="Введите текст">
+              <button type="submit" class="button-submit"></button>
             </div>
           </div>
-        </div>
       </div>
-    </div>
-    <script src="./pages/app.js"></script>
   </body>
 </html>
+

@@ -10,7 +10,12 @@ const chatSocket = new WebSocket(
 
 chatSocket.onmessage = function (e) {
     const data = JSON.parse(e.data);
-    document.querySelector('#chat-log').value += (data.message + '\n');
+    const fragment = document.createDocumentFragment();
+    const li = document.createElement('li');
+    li.classList.add('container-list__item');
+    li.textContent = (data.message + '\n');
+    fragment.appendChild(li);
+    document.querySelector('#chat-log').appendChild(fragment);
 };
 
 chatSocket.onclose = function (e) {
